@@ -10,15 +10,15 @@
 		<?php 
 			include ("../elem/header.php");
 		 ?>
-		 
-		 
-		<?php 
-		 		include ("../elem/main.php");
-		?>
+		 <div class="content">
 
 		<?php 
-		 		include ("../elem/footer.php");
+			include ("../elem/basket.php");
 		 ?>
-	 </div>
+
+		 </div>
+		 <?php 
+		 	include ("../elem/footer.php");
+		 ?>
 </body>
 </html>

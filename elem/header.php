@@ -2,17 +2,22 @@
 
 <!--LINEmENU-->
 	<div id="lineMenu">
-		<ul>
-			
-			<a href=""><span id="icon"></span><li>lorem</li></a>
-			<span></span>
-			<a href=""><li>lorem</li></a>
-			<span></span>
-			<a href=""><li>lorem</li></a>
-			<span></span>
-			<a href=""><li>lorem</li></a>
-			<span></span>
-			<a href=""><li>lorem</li></a>
+		<ul>	
+			<li><a href=""><span id="account"></span>My account</a></li>
+			<li><a href=""><span id="account"></span>Basket</a></li>
+			<li>
+				<a href=""><span></span>lorem</a>
+				<section>
+					<form action="" id="enterHeader">
+						<p>lorem</p>
+						<input type="text">
+						<p>lorem</p>
+						<input type="text">
+						<input type="button" value="enter">
+					</form>
+				</section>
+				<a href=""><span></span>lorem</a>
+			</li>
 		</ul>
 	</div>
 
@@ -34,6 +39,10 @@
 			</li>';
 		 } ?>
 		</ul>
+		<form action="">
+			<input type="text">
+			<input type="button">
+		</form>
 	</div>
 
 	<div class="where">
