@@ -40,14 +40,14 @@ ul {
 p.grey {
 	color: #dedede;
 }
-input[type = button]{
+input[type = button],.buy >div:nth-child(2) > p{
 	color: #fff;
 	cursor: pointer;
 	background: #f16060;
 	border: 0;
 	transition: 0.2s;
 }
-input[type = button]:hover {
+input[type = button]:hover,.buy >div:nth-child(2) > p:hover {
 	background: #d44c38;
 }
 input  ,textarea{
@@ -338,6 +338,7 @@ img.logo {
 	padding: 5px 0;
 	border-radius: 7px;
 }
+
 .buy >div:nth-child(2) > p> a {
 	color: #fff;
 }
