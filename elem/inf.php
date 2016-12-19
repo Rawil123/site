@@ -104,50 +104,53 @@
 <div class="sidebar">
 <section>
 	<p class="h1">Lorem ipsum.</p>
-	<div class="greyLine"></div>
-<?php 
-for ($i=0; $i < 3; $i++) { 
-	echo '			
-	<div class="hot">
-			<a href="">
+	<div class="rank">
+			<div>
 				<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRxI9U9bdTuC7Bnq8HVrXACx80XuUMRzu0J0QyR_-Z48T-ghVDYmYqpjQ" alt="">
-				</a>
-				<div class="left">
-				
-					<p class="descrFooter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, quos.</p>
-					<p class="value">8000</p>
-					<p class="val">USD</p>
-
-				</div>
-				
-			</div>';
- } ?>
+				<section class="prodFooter">
+					<p>lorem</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, laborum.</p>
+				</section>
+				<section class="valueFooter">
+					<p>800</p>
+					<p>usd</p>
+				</section>
+			</div>
+	</div>
+	<div class="rank">
+			<div>
+				<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRxI9U9bdTuC7Bnq8HVrXACx80XuUMRzu0J0QyR_-Z48T-ghVDYmYqpjQ" alt="">
+				<section class="prodFooter">
+					<p>lorem</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, laborum.</p>
+				</section>
+				<section class="valueFooter">
+					<p>800</p>
+					<p>usd</p>
+				</section>
+			</div>
+	</div>
 </section>
 
 <section>
 	<p class="h1">Lorem ipsum.</p>
-	<div class="greyLine"></div>
-<?php 
-for ($i=0; $i < 3; $i++) { 
-	echo '			
-	<div class="hot">
-			<a href="">
-				<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRxI9U9bdTuC7Bnq8HVrXACx80XuUMRzu0J0QyR_-Z48T-ghVDYmYqpjQ" alt="">
-				</a>
-				<div class="left">
-				
-					<p class="descrFooter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, quos.</p>
-					<p class="value">8000</p>
-					<p class="val">USD</p>
 
-				</div>
-				
-			</div>';
- } ?>
+	<div class="rank">
+			<div>
+				<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRxI9U9bdTuC7Bnq8HVrXACx80XuUMRzu0J0QyR_-Z48T-ghVDYmYqpjQ" alt="">
+				<section class="prodFooter">
+					<p>lorem</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, laborum.</p>
+				</section>
+				<section class="valueFooter">
+					<p>800</p>
+					<p>usd</p>
+				</section>
+			</div>
+	</div>
 </section>
 <section>
 	<p class="h1">Search</p>
-	<div class="greyLine"></div>
 	<form action="" id="searchSidebar">
 		<input type="text"><input type="button" value="Search">
 	</form>
