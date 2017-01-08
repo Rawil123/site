@@ -9,9 +9,9 @@ html,div.wrapper,body {
 .page:after,.bottomCell:after,.cellFooter:after ,.inFooter:after,
 .left:after,.hot:after,.where:after,.topDescr:after,.descr:after,
 .purch:after,.purch > section:after,.descrText:after,.guarantee:after,
-#basket>section:after,#lineMenu>ul:after,.filter:after,#filter>form:after,
-.rank:after,.rank>div:after,.wrapperInf:after
-
+.listProd>section:after,#lineMenu>ul:after,.filter:after,#filter>form:after,
+.rank:after,.rank>div:after,.wrapperInf:after,.cont:after,#logo:after,
+.vie:after,footer>div:after
  {
 	content: "";
 	display: block;
@@ -42,17 +42,19 @@ ul {
 p.grey {
 	color: #dedede;
 }
-input[type = button],.buy >div:nth-child(2) > p{
+input[type = button],.buy >div:nth-child(2) > p,#tabs > ul > li,
+input[type = submit]{
 	color: #fff;
 	cursor: pointer;
 	background: #f16060;
 	border: 0;
 	transition: 0.2s;
 }
-input[type = button]:hover,.buy >div:nth-child(2) > p:hover {
+input[type = button]:hover,.buy >div:nth-child(2) > p:hover,
+#tabs > ul > li.active,input[type = submit]:hover  {
 	background: #d44c38;
 }
-input  ,textarea{
+input ,textarea,select{
 	outline: none;
 }
 textarea {
@@ -95,27 +97,8 @@ textarea {
 	margin: 0 5% 0 0;
 }
 #lineMenu > ul>li:last-child > a {
-	font-size: 17px;
-	position: relative;
-	margin-left: 30px;
+	color: #fff;
 }
-#lineMenu > ul>li:last-child > a>span {
-	width: 20px;
-	height: 20px;
-	background: #000;
-	top: 0;
-	left: -60%;
-	display: block;
-}
-#lineMenu > ul>li:last-child > section {
-	position: absolute;
-	width: 100%;
-	top: 42px;
-	border: 1px solid #dedede;
-	border-radius: 7px;
-	left: -20%;
-}
-
 #enterHeader {
 	position: static;
 	margin: 10px 0;
@@ -145,23 +128,56 @@ textarea {
 	color: #fff;
 	position: relative;
 }
-img.logo {
-	width: 200px;
-	height: 100px;
-	background: #000;
-	margin: 30px 0 0 5%;
+/*logo*/
+#logo {
+	width: 100%;
+	margin: 20px 0;
 }
-
+.imgLogo > img{
+	width: 20%;
+	height: 100px;
+	float: left;
+	margin-left: 5%;
+}
+#logo .phone {
+	float: right;
+	width: 40%;
+	display: inline-block;
+}
+#logo .phone >section{
+	width: 40%;
+	float: left;
+	margin: 0 4%;
+}
+#logo .phone >section >img {
+	float: left;
+	width: 40%;
+	height: 100px;
+	border-right:  1px solid #adadad;
+	padding-right: 6%;
+}
+#logo .phone >section >div {
+	margin-top: 20px;
+	margin-left: 43%;
+}
+#logo .phone >section >div> p {
+	font-size: 90%;
+	color: #adadad;
+	line-height: 20px;
+}
 /* top menu */
 #catagory {
 	border-top: 1px solid #dedede;
 	margin: 30px 0 0 0;
 	position: relative;
+	clear: both;
 	width: 100%;
 }
 /*DropMenu*/
 #catagory > ul {
 	margin-left: 5%;
+	position: relative;
+	z-index: 100;
 	width: 70%;
 	float: left;
 }
@@ -170,34 +186,39 @@ img.logo {
 	margin: 10px 0 10px 0.2%;
 	width: 12%;
 	position: relative;
-	display: block;
 	cursor: pointer;
+	transition:0.3s;
+}
+#catagory > ul >li:hover {
+	color: #f06262;
 }
 #catagory > ul >li:first-child{
 	margin: 10px 0 10px 0;
 }
 .drop {
-	margin: 0 0 0 1%;
-	opacity: 0;
 	width: 100%;
-	left: 99999999;
+	top: -100%;
 	position: absolute;
-	display: none;
+	transition: 0.5s;
+	transform: scale(0);
 }
 #catagory > ul >li:hover .drop{
-	display: block;
-	left: 0;
 	opacity: 1;
+	transform: scale(1);
+	top: 100%;
 }
 .drop > li >a {
-	background: red;
-	font-size: 110%;
-	color: #fff;
+	background: #f16060;
+	font-size: 100%;
+	color:#fce3e3;
 	display: block;
 	width: 100%;
-	padding: 2px 0 2px 10%;
-	border-bottom: 1px solid #000;
+	padding: 4px 0 4px 10%;
+	border-bottom: 1px solid #db5555;
 	transition: 0.5s;
+}
+.drop > li >a:hover {
+
 }
 .drop > li:first-child >a {
 	border-radius: 3px 3px 0 0;
@@ -207,8 +228,7 @@ img.logo {
 	border-radius: 0 0 5px 5px;
 }
 .drop > li >a:hover {
-	background: #000;
-	padding: 2px 0 2px 15%;
+	background: #ff7979;
 }
 /*search in catagory */ 
 #catagory form {
@@ -223,6 +243,7 @@ img.logo {
 	margin: 0 38% 0 0;
 }
 #catagory form input[type= button] {
+
 	position: absolute;
 	top: 1px;
 	left: 55%;
@@ -243,6 +264,7 @@ img.logo {
 	float: left;
 	padding: 10px 0;
 	margin: 0 0 0 3.55%;
+	position: relative;
 }
 .where  a {
 	color: #fff;
@@ -258,18 +280,39 @@ img.logo {
 .product {
 	clear: both;
 	background: #f2f2f2;
+	cursor: pointer;
+}
+.vie {
+	border-radius: 7px;
+	overflow: hidden;
+	border: 1px solid #dedede;
+	display: inline-block;
+}
+.vie >span{
+	width: 30px;
+	height: 30px;
+	display: block;
+	float: left;	
+	background: #000;
+}
+.vie >span:first-child {
+	border-right: 1px solid #dedede;
+}
+.wrapperCell {
+	clear: both;
+	text-align: center;
 }
 .cell {
-	width: 17%;
+	width: 18%;
 	background: #fff;
-	float: left;
 	position: relative;
 	transition: transform; 
-	margin: 15px 1.5%;
 	border: 1px solid #dedede;
 	border-radius: 7px;
 	transition: 0.5s;
+	margin: 10px 1%; 
 	cursor: pointer;
+	display: inline-block;
 }
 .imgProduct {
 	 width: 100%;
@@ -480,7 +523,7 @@ div.bottom > p {
 .topDescr > img {
 	width: 54%;
 	display: block;
-	border-right: 1px solid #dedede;
+	border-right 1px solid #dedede;
 	padding: 16px 5.1% 16px 0 ;
 	height: 300px;
 	float: left;
@@ -713,7 +756,7 @@ div.bottom > p {
 	width: 32%;
 	border: 2px solid #dedede;
 	border-radius: 7px;
-	margin: 40px 0 0 15%;
+	margin: 40px 0 40px 15%;
 }
 #wrapperRegLog > div {
 	width: 90%;
@@ -744,7 +787,7 @@ div.bottom > p {
 	font-size: 120%;
 	font-weight: bold;
 }
-#reg > section >.error {
+.error {
 	background: orange;
 	padding: 5px 5%;
 	width: 55%;
@@ -762,33 +805,41 @@ div.bottom > p {
 	left: 10px;
 }
 /*basket*/
-#basket {
+.listProd {
 	
 }
-#basket > section:first-child{
-	margin: 0;
-}
-#basket > section {
+
+.listProd > section {
 	width: 100%;
 	border-bottom: 1px solid #dedede;
 }
-#basket > section > img {
-	width: 17%;
-	height: 170px;
-	margin: 10px 0;
+.basketImg {
 	float: left;
+	width: 17%;
+	clear: right;
+	margin: 10px 0;
 }
-#basket > section > p.descr {
+.listProd > section  img {
+	width: 100%;
+	height: 170px;
+	
+}
+.listProd .name {
+	text-align: center;
+	font-size: 17px;
+}
+.descr {
 	border: 0;
+	background: #f2f2f2;
 	width: 50%;
 	float: left;
 	margin: 20px 2%;	
 }
-#basket > section > form {
+.listProd > section > form {
 	display: block;
 	margin: 0 auto;
 }
-#basket > section > form > input {
+.listProd > section > form > input {
 	padding: 3px 5%;
 	border-radius: 7px;
 	margin:  30px 0 0 0;
@@ -815,4 +866,26 @@ div.bottom > p {
 }
 #filter > form > section:first-child > input {
 	width: 70px;
+}
+#filter > form > section > input[type=button] {
+	padding: 3px 30%;
+	border-radius: 7px;
+}
+/*account*/
+#tabs > ul {
+	
+}
+#tabs > ul > li {
+	display: inline-block;
+	padding: 5px 6%;
+	margin: 5px -3px;
+}
+#tabs > ul > li:first-child {
+	border-radius: 7px 0 0 7px;
+}
+#tabs > ul > li:last-child {
+	border-radius: 0 7px 7px 0;
+}
+.contentTabs {
+	margin: 5px 0;
 }

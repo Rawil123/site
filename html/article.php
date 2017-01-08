@@ -19,7 +19,7 @@
 		 	include ("../elem/advantage.php");
 		 	?>
 
-		 </div>
+	</div>
 		 <?php 
 		 	include ("../elem/footer.php");
 		  ?>

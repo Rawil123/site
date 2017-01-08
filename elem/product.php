@@ -1,5 +1,12 @@
 <div class="product">
 
+<div class="vie">
+	<span id="block"></span>
+	<span id="list"></span>
+</div>
+
+<div class="wrapperCell">
+	
 <?php 
 for ($i=0; $i < 20; $i++) { 
  	echo '<div class="cell">
@@ -21,7 +28,7 @@ for ($i=0; $i < 20; $i++) {
 		</section>
 	</div>';
  } ?>
-	
+</div>
 	</div>
 <?php 
 include 'page.php';

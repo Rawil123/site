@@ -1,0 +1,224 @@
+/* monitors and laptops */
+@media screen and (min-width: 1240px)  {}
+
+/* tablet */
+@media screen and (min-width: 1024px) and (max-width: 1240px)  {}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {}
+
+/* mobile */
+@media screen and (max-width: 768px) {}
+
+/* iPad in portrait & landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  {}
+
+/* iPad in landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
+
+/* iPad in portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
+
+/* Retina iPad in portrait & landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2) {}
+
+/* Retina iPad in landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 2) {}
+
+/* Retina iPad in portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 2) {}
+
+/* iPad 1 & 2 in portrait & landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 1){}
+
+/* iPad 1 & 2 in landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 1)  {}
+
+/* iPad 1 & 2 in portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 1) {}
+
+/* iPad mini in portrait & landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 1)  {}
+
+/* iPad mini in landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 1)  {}
+
+/* iPad mini in portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 1)  {}
+
+/* iPhone 5 in portrait & landscape */
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {}
+
+/* iPhone 5 in landscape */
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) {}
+
+/* iPhone 5 in portrait */
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) {}
+
+/* iPhone 2G-4S in portrait & landscape */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {}
+
+/* iPhone 2G-4S in landscape */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) {}
+
+/* iPhone 2G-4S in portrait */
+@media only screen and (min-device-width : 0px) and (max-device-width : 480px) and (orientation : portrait) {
+	html,body,#wrapper {
+		min-width: 0;
+	}
+
+	/*header*/ 
+	#lineMenu > ul > li {
+		padding: 0;
+		margin: 0;
+		font-size: 12px;
+		font-weight: 100;
+	}
+	#lineMenu > ul > li:first-child {
+		margin-right: 10px;
+	}
+	.phone {
+		position: absolute;
+		top: -1000000px;
+	}
+	#catagory >ul {
+		width: 100%;
+		margin: 2px 0;
+		display: flex;	
+		flex-flow: row wrap;
+		justify-content: center;	
+	}
+	#catagory >ul >li {
+		padding: 0 3px;
+		font-size: 14px;
+		margin: 10px 10px ;
+	}
+	.drop > li >a {
+		width: 150%;
+	}
+	#catagory > form {
+		display: none;
+	}
+
+	/*where*/
+	.where > div > p{
+		font-size: 13px;
+		margin: 0 3.5%;
+	}
+	/*content*/
+	.content{
+		margin: 20px 0;
+		width: 100%;
+	}
+
+	/*catalog*/ 
+
+	#filter > form > section {
+		margin: 0;
+	}
+ 	.wrapperCell {
+ 		margin: 0 auto;
+ 		width: 90%;
+ 	}
+	.wrapperCell .cell {
+		width: 45%;
+	}
+	.imgProduct {
+		height: 200px;
+	}
+	.advantage {
+		display: none;
+	}
+
+
+	/*footer*/
+	footer {
+
+	}
+	.rank:first-child {
+		display: block;
+		width: 100%;
+	}
+	.rank {
+		display: none;
+	}
+	.bottom > p {
+		font-size: 10px;
+	}
+
+    /*article*/
+    .descr {
+    	float: none;
+    	width: 100%;
+    }
+    .topDescr > img {
+    	height: 200px;
+    }
+    #size {
+		padding: 0;
+		margin: 0;
+    }
+    #size> section {
+    	margin-top: 0;
+    }
+    #createOpinion textarea{
+    	width: 70%;
+    	height: 100px;
+    }
+    #createOpinion input[type=button] {
+    	margin: 20px 2.5%;
+    }
+    .sidebar {
+    	display: none;
+    }
+    /*basket*/
+    .basketImg {
+    	width: 65%;
+    	float: none;
+    	margin: 0 auto;
+    }
+    .listProd > section img {
+    	width: 100%;
+    	margin: 20px auto;
+    	display: block;
+    	height: 220px;
+    	margin-bottom: 5px;
+    	float: none;
+    }
+    .listProd section form  {
+    	clear: both;
+    	text-align: center;
+    }
+    .listProd section form input {
+    	margin: 10px;
+    	width: 30%;
+    	font-size: 16px;
+    }
+    .descr {
+    	width: 90%;
+    	display: block;
+    	margin: 0 auto;
+    	font-size: 15px;
+    }
+    /*log*/
+    #wrapperRegLog {
+    	width: 100%;
+    	margin: 0;
+    	border: 0;
+    }
+    #wrapperRegLog form section {
+		
+		margin-left: 4%;
+    }
+    #wrapperRegLog form section input,.error {
+    	width: 70%;
+    }
+    /*tabs*/
+    #tabs > ul {
+    	text-align: center;
+    }
+    #tabs > ul > li {
+    	padding: 5px 3%;
+    	font-size: 13px;
+    }
+}

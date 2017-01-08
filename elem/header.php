@@ -1,28 +1,34 @@
 <header>
-
 <!--LINEmENU-->
 	<div id="lineMenu">
 		<ul>	
-			<li><a href=""><span id="account"></span>My account</a></li>
+			<li><a href=""><span id="basket"></span>My account</a></li>
 			<li><a href=""><span id="account"></span>Basket</a></li>
-			<li>
-				<a href=""><span></span>lorem</a>
-				<section>
-					<form action="" id="enterHeader">
-						<p>lorem</p>
-						<input type="text">
-						<p>lorem</p>
-						<input type="text">
-						<input type="button" value="enter">
-					</form>
-				</section>
-				<a href=""><span></span>lorem</a>
-			</li>
+			<li><a href="">lorem</a></li>
 		</ul>
 	</div>
+	
+		<div id="logo">
+						<div class="imgLogo"><img src="https://pp.vk.me/c631319/v631319868/52089/nkkN-GT2n3c.jpg" alt=""></div>
+						<div class="phone">
+							<section>
+								<img src="https://pp.vk.me/c631319/v631319868/52089/nkkN-GT2n3c.jpg" alt="">
+								<div>
+									<p>+8 982 123 54 30</p>
+									<p>+8 982 123 54 30</p>
+								</div>
+							</section>
+							<section>
+								<img src="https://pp.vk.me/c631319/v631319868/52089/nkkN-GT2n3c.jpg" alt="">
+								<div>
+									<p>+8 982 123 54 30</p>
+									<p>+8 982 123 54 30</p>
+								</div>
+							</section>
+						</div>		
 
-
-	<a href=""><img src="" alt="" class="logo"></a>
+		</div>
+	
 
 	<div id="catagory">
 		
