@@ -1,40 +1,31 @@
 <div id="wrapperRegLog">
 	<div>
 		<p class="h1">lorem</p>
-		<form action="" id="reg">
+		<div id="reg">
 			<section>
 				<p>lorem</p>
-				<input type="text" name="login">
-				<!--<p class="error">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit minima deserunt rerum tenetur eius consequatur dignissimos. Officia quasi maxime reiciendis.</p>-->
-			</section>
-			<section>
-				<p>lorem</p>
-				<input type="password" name="password">
+				<input type="text" id="login">
+				<p class="error" id="loginError"></p>
 			</section>
 			<section>
 				<p>lorem</p>
-				<input type="password" name="repitPassword">
+				<input type="password" id="password">
+				<p class="error" id="passwordError"></p>
 			</section>
 			<section>
 				<p>lorem</p>
-				<input type="email" name="email">
+				<input type="password" id="repitPassword">
+				<p class="error" id="repitPasswordError"></p>
 			</section>
 			<section>
-				<input type="submit" value="enter" id="regSubmit">
+				<p>lorem</p>
+				<input type="email" id="email">
+				<p class="error" id="emailError"></p>
 			</section>
-		</form>
-		<script>
-		$('#reg').submit(function() {
-			var res = $(this).serialize();
-				$.ajax ({
-					type: 'POST',
-					url: '../php/main.php',
-					data:res,
-					success : function(html) {
-					alert(html)
-				}
-			})
-		})
-		</script>
+			<section>
+				<input type="submit" value="enter" id="regSubmit" onclick="query('reg','login.password.repitPassword.email')">
+				<p class="error" id="goodReg"></p>
+			</section>
+		</div>
 	</div>
 </div>

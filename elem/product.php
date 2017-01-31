@@ -1,36 +1,66 @@
+<?php 
+	$result = mysql_query("SELECT * FROM `product`");
+	$row = mysql_fetch_array($result);
+	$maxPosts = 2;
+	$numberPosts = mysql_num_rows($result);
+	$numberPages =  intval(($numberPosts-1)/$maxPosts)+1;
+	if (isset($_GET['page'])) {
+		$page = $_GET['page'];
+	}
+	else {
+		$page = 1;
+	}
+	$liteDescr = substr($row['description'], 0,130);
+?>
 <div class="product">
 
-<div class="vie">
+<!--<div class="vie">
 	<span id="block"></span>
 	<span id="list"></span>
-</div>
+</div>-->
 
 <div class="wrapperCell">
-	
 <?php 
-for ($i=0; $i < 20; $i++) { 
- 	echo '<div class="cell">
+	do {
+
+		if (($row['id']>$page*$maxPosts-$maxPosts)&& ($row['id']<=$page*$maxPosts)) {
+
+
+	echo '<div class="cell">
 		<section class="imgProduct">
-			<a href="http://localhost/shop/html/article.php?">
-				<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRxI9U9bdTuC7Bnq8HVrXACx80XuUMRzu0J0QyR_-Z48T-ghVDYmYqpjQ" alt="product">
-				<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, explicabo!</span>
+			<a href="http://localhost/shop/html/article.php?id='.$row["id"].'">
+				<img src= '.$row["img"].' alt="product">
+				<span>'.$liteDescr.'...</span>
 			</a>
-			<p class="nameProd">Lorem ipsum dolor sit</p>
+				
 		</section>
+		<a href="http://localhost/shop/html/article.php?">	<p class="nameProd">'.$row["name"].'</p></a>
 		<section class="buy">
+
 			<div>
-				<p>800</p>
+				<p>'.$row["valueNew"].'</p>
 				<p>usd</p>
 			</div>
 			<div>
 				<p><a href="">lorem</a></p>
 			</div>
 		</section>
-	</div>';
- } ?>
+</div>';
+		}
+			
+
+	
+	} while ($row = mysql_fetch_array($result));
+			
+
+
+
+
+
+?>
+
 </div>
-	</div>
+</div>
 <?php 
 include 'page.php';
  ?>
-

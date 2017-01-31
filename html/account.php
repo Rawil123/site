@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<?php 
-	include '../elem/head.php'; 
-?>
-	<title>account</title>
-</head>
-<body>
+<?php include '../elem/head.php'; ?><body>
 	
 		<?php 
 			include ("../elem/header.php");

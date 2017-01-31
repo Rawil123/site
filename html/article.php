@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<?php 
-	include '../elem/head.php'; 
-?>
+<?php include '../elem/head.php'; ?>
 <body>
 
 	<div id="wrapper">
