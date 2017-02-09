@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include '../php/connect.php'; ?>
 <?php include '../php/include.php'; ?>
 <!DOCTYPE html>
@@ -10,9 +11,10 @@
 	<link rel="stylesheet" href="../css/mobileIcon.css">
 	<link rel="stylesheet" href="../css/mobile.css">
 	<script type="text/javascript" src = "../js/main.js"></script>
+	<script src = '../js/include.js'></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>shop</title>
+	<title><?php title() ?></title>
 
 </head>
 	        

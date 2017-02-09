@@ -1,19 +1,21 @@
 <div id="wrapperRegLog">
 	<div>
 		<p class="h1">lorem</p>
-		<form action="" id="reg">
+		<p class="error"></p>
 			<section>
 				<p>lorem</p>
-				<input type="text">
-				<p class="error">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit minima deserunt rerum tenetur eius consequatur dignissimos. Officia quasi maxime reiciendis.</p>
+				<input type="text" id="loginEnter">
 			</section>
 			<section>
 				<p>lorem</p>
-				<input type="text">
+				<input type="password" id="passwordEnter">
 			</section>
 			<section>
-				<input type="button" value="enter">
+				<input type="checkbox" id="setCookieEnter" value="true">
+				<span>lorem</span>
 			</section>
-		</form>
+			<section>
+				<input type="submit" value="enter" onclick="query('enter','loginEnter.passwordEnter.setCookieEnter')">
+			</section>
 	</div>
 </div>

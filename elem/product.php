@@ -1,8 +1,8 @@
 <?php 
-	$result = mysql_query("SELECT * FROM `product`");
-	$row = mysql_fetch_array($result);
+	$query = mysql_query("SELECT * FROM `product`");
+	$row = mysql_fetch_array($query);
 	$maxPosts = 2;
-	$numberPosts = mysql_num_rows($result);
+	$numberPosts = mysql_num_rows($query);
 	$numberPages =  intval(($numberPosts-1)/$maxPosts)+1;
 	if (isset($_GET['page'])) {
 		$page = $_GET['page'];
@@ -14,10 +14,6 @@
 ?>
 <div class="product">
 
-<!--<div class="vie">
-	<span id="block"></span>
-	<span id="list"></span>
-</div>-->
 
 <div class="wrapperCell">
 <?php 
@@ -50,7 +46,7 @@
 			
 
 	
-	} while ($row = mysql_fetch_array($result));
+	} while ($row = mysql_fetch_array($query));
 			
 
 

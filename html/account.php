@@ -2,28 +2,19 @@
 	
 		<?php 
 			include ("../elem/header.php");
-		 ?>
-		<div class="content">
-			<div id="tabs">
-    			<ul>
-       				<li>lorem</li>
-        			<li>lorem</li>
-       				<li>lorem</li>
-       				<li>lorem</li>
-       				<li>lorem</li>
-       				<li>lorem</li>
-   				</ul>
 
-   				<div class="contentTabs">
-   					<?php include '../elem/history.php'; ?>
-   					<?php include '../elem/history.php'; ?>
-   					<?php include '../elem/history.php'; ?>
-   					<div>asdf</div>
-   				</div>	
-			</div>
-		</div>
-		 <?php 
+			if ($_SESSION['enter'] == 1) {
+				include '../elem/account.php';
+			}
+			else {
+				echo '
+					<div class="content">
+						<p>Войдите в свой аккаунт</p>
+					</div>
+				';
+			}
+
 		 	include ("../elem/footer.php");
-		  ?>
+		?>
 </body>
 </html>

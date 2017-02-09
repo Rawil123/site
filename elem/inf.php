@@ -2,68 +2,62 @@
 	$id =$_GET['id'];
 	$result = mysql_query("SELECT * FROM `product` WHERE id = '$id' ");
 	$row = mysql_fetch_array($result);
- ?>
 
+	//Данные для фильтра товаров
+	$sizeProduct = explode(',', $row['size']);
+	$numberSize = count($sizeProduct);
+
+	$colorProduct = explode(',', $row['color']);
+	$numberColor = count($colorProduct);
+
+	//Изображения продуктов 
+	$imgProduct = explode(',', $row['img']);
+	$numberImg = count($imgProduct);
+
+	//Коментарии
+	$queryOpinion =mysql_query(" SELECT * FROM `opinion` WHERE `idProduct` = $id; ");
+	$rowOpinion = mysql_fetch_array($queryOpinion);
+?>
 <div class="wrapperInf">
 <div class="descr">
 <div>
 	<div class="topDescr">
 		<span class="back"></span>
-		<img src = '<?php echo $row["img"]; ?>' alt="">
+		<img src = "" alt="">
 		<span class="next"></span>		
-		<form action="" id="size">
+		<div id="size">
 			<section>
-				<p class="h2">lorem</p>
+				<p class="h2">Размер</p>
 				<select name="" id="">
-					<option value="">lorem1</option>
-					<option value="">lorem2</option>
-					<option value="">lorem3</option>
-					<option value="">lorem4</option>
-					<option value="">lorem5</option>
-					<option value="">lorem6</option>
-					<option value="">lorem7</option>
-					<option value="">lorem8</option>
-					<option value="">lorem9</option>
-					<option value="">lorem10</option>
+					
+					<?php 
+					for ($i=0; $i < $numberSize; $i++) { 
+						echo "<option>";
+						echo $sizeProduct[$i];
+						echo "</option>";
+					}
+					?>
 				</select>
 			</section>
 			<section>
-				<p class="h2">lorem</p>
+				<p class="h2">Цвет</p>
 				<select name="" id="">
-					<option value="">lorem1</option>
-					<option value="">lorem2</option>
-					<option value="">lorem3</option>
-					<option value="">lorem4</option>
-					<option value="">lorem5</option>
-					<option value="">lorem6</option>
-					<option value="">lorem7</option>
-					<option value="">lorem8</option>
-					<option value="">lorem9</option>
-					<option value="">lorem10</option>
+					<?php 
+					for ($i=0; $i < $numberColor; $i++) { 
+						echo "<option>".$colorProduct[$i]."</option>";
+					}
+					?>
 				</select>
 			</section>
-			<section>
-				<p class="h2">lorem</p>
-				<select name="" id="">
-					<option value="">lorem1</option>
-					<option value="">lorem2</option>
-					<option value="">lorem3</option>
-					<option value="">lorem4</option>
-					<option value="">lorem5</option>
-					<option value="">lorem6</option>
-					<option value="">lorem7</option>
-					<option value="">lorem8</option>
-					<option value="">lorem9</option>
-					<option value="">lorem10</option>
-				</select>
-			</section>
-		</form>
+		</div>
+
 		<div class="multy">
 			<span class="back"></span>
-				<img src="https://cs7060.vk.me/c638126/v638126102/1de84/_OMmQ0OYvOY.jpg" alt="">
-				<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRxI9U9bdTuC7Bnq8HVrXACx80XuUMRzu0J0QyR_-Z48T-ghVDYmYqpjQ" alt="">
-				<img src="https://pp.vk.me/c626520/v626520079/56e36/CqCt_Osv4Dw.jpg" alt="">
-				<img src="https://cs7060.vk.me/c836526/v836526684/1306e/9EQQFA7Wdsw.jpg" alt="">
+				<?php 	
+					for ($i=0; $i < $numberImg; $i++) { 
+						echo '<img src = "'.$imgProduct[$i].'"></img>';
+					}
+				 ?>
 			<span class="next"></span>
 		</div>	
 
@@ -89,31 +83,38 @@
 		<p class="description"><?php echo $row['description'];?></p>
 	</div>
 	<div class="opinion">
-	<p class="titledDescr">opinion</p>
+	<p class="titledDescr">Коментарии</p>
 		<section>
-			<p class="user">Name</p>
-			<p class="titleOpi">good</p>
-			<p class="opinionText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius vero, mollitia nihil assumenda officiis similique quasi, suscipit ipsa voluptates dicta magnam repellendus, adipisci quod facere numquam illo beatae magni maxime!</p>
+		<?php 	
+			do {
+
+				if ($rowOpinion['id'] <= 3 ) {
+					echo '<p class="user">'.$rowOpinion["username"].'</p>
+						  <p class="titleOpi">'.$rowOpinion["titleOpinion"] .'</p>
+						  <p class="opinionText">'.substr($rowOpinion["textOpinion"], 0, 1012).'...</p>';
+				}
+				
+			} while ($rowOpinion = mysql_fetch_array($queryOpinion));
+		 ?>
+			<?php echo '<a href="http://localhost/shop/html/opinion.php?id='.$id.'">Все коментарии</a>' ; ?>
 		</section>
-				<section>
-			<p class="user">Name</p>
-			<p class="titleOpi">good</p>
-			<p class="opinionText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius vero, mollitia nihil assumenda officiis similique quasi, suscipit ipsa voluptates dicta magnam repellendus, adipisci quod facere numquam illo beatae magni maxime!</p>
-		</section>
-				<section>
-			<p class="user">Name</p>
-			<p class="titleOpi">good</p>
-			<p class="opinionText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius vero, mollitia nihil assumenda officiis similique quasi, suscipit ipsa voluptates dicta magnam repellendus, adipisci quod facere numquam illo beatae magni maxime!</p>
-		</section>
+		
 	</div>
 </div>
 	
 	<div class="createOpinion">
-	<h2>lorem</h2>
-		<form action="" id="createOpinion">
-			<textarea name="" id="" cols="30" rows="10" placeholder="lorem"></textarea>
-			<input type="button" value="Enter">
-		</form>
+	<h2>Создать коментарий</h2>
+		<div id="createOpinion">
+			<p class="error"></p>
+			<p>Краткая оценка</p>
+			<input type="text" id="titleOpinion">
+			<p>Полная оценка</p>
+			<textarea id="textOpinion" cols="30" rows="10" placeholder="lorem"></textarea>
+			<input type="text" id="idProduct" hidden="" value='<?php echo $id; ?>'>
+			<input type="button" value="Enter"
+		onclick="query('createOpinion',
+		'titleOpinion.textOpinion.idProduct')">
+		</div>
 	</div>
 </div>
 <div class="sidebar">

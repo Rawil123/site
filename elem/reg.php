@@ -1,30 +1,30 @@
 <div id="wrapperRegLog">
 	<div>
-		<p class="h1">lorem</p>
+		<p class="h1">Регистрация</p>
 		<div id="reg">
+		<p class="error"></p>
 			<section>
-				<p>lorem</p>
+				<p>Ваше имя :</p>
 				<input type="text" id="login">
-				<p class="error" id="loginError"></p>
 			</section>
 			<section>
-				<p>lorem</p>
+				<p>Ваша фамилия :</p>
+				<input type="text" id="lastName">
+			</section>
+			<section>
+				<p>Пароль :</p>
 				<input type="password" id="password">
-				<p class="error" id="passwordError"></p>
 			</section>
 			<section>
-				<p>lorem</p>
+				<p>Повторите пароль :</p>
 				<input type="password" id="repitPassword">
-				<p class="error" id="repitPasswordError"></p>
 			</section>
 			<section>
-				<p>lorem</p>
+				<p>Ваш Email:</p>
 				<input type="email" id="email">
-				<p class="error" id="emailError"></p>
 			</section>
 			<section>
-				<input type="submit" value="enter" id="regSubmit" onclick="query('reg','login.password.repitPassword.email')">
-				<p class="error" id="goodReg"></p>
+				<input type="submit" value="enter" id="regSubmit" onclick="query('reg','login.lastName.password.repitPassword.email')">
 			</section>
 		</div>
 	</div>

@@ -32,20 +32,66 @@ $(document).ready(function() {
 $("#tabs").lightTabs();
 	
 /*multy vie*/
+
+//Активное изображение по умолчанию 
+var imgs = $('.multy  img');
+$(imgs).addClass('activeImg');
+removeImg('.activeImg','.topDescr > img');
+
 $('.multy  img').click(function() {
-    var object = $('.topDescr > img');
-    var atribut = $(this).attr("src");
-    var delay = 300;
 
-        
-        object.attr("src",atribut);
+    
+    //Ставим флажок активности изображения
+    $('.multy  img').removeClass('activeImg');
+    $(this).addClass('activeImg');
+
+    //Заменяем изоброжение в топе на активное
+    var src = $(this).attr('src');
+    var mainImg = $('.topDescr > img');
+
+    // Скрипт происходит если это 2 разных изображения
+    if (src != mainImg.attr('src')) { 
+        removeImg('.activeImg','.topDescr > img',500);
+    }
+});
+
+//Навигация при помощи стрелок 
+$('.next').click(function() {
+    var next = $('.activeImg').next();
+    if (next[0].tagName == 'IMG') {
+        $('.multy  img').removeClass('activeImg');
+        $(next).addClass('activeImg');
+
+        removeImg('.activeImg','.topDescr > img',500);
+    }
 
 });
+
 $('.back').click(function() {
-
+    var prev = $('.activeImg').prev();
+    if (prev[0].tagName == 'IMG') {
+        $('.multy  img').removeClass('activeImg');
+        $(prev).addClass('activeImg');
+        
+        removeImg('.activeImg','.topDescr > img',500);
+    }
 });
 
-
+//Увеличение элемента
+fullscreen('.topDescr > img');
+//Show filter
+$('#showleFilter').click(function() {
+    var $this = $('#filter');
+    var theClass = $this.attr('class');
+    if (theClass != 'active') {
+        $this.css({'left':'1%','transform':'scale(1)','opacity':'1'});
+        $this.toggleClass('active');
+    }
+    else {
+        $this.css({'left':'-100%','transform':'scale(0)','opacity':'0'});
+        $this.toggleClass('active');
+    }
+})
 
 
 
@@ -54,8 +100,10 @@ $('.back').click(function() {
 });
 
 /*ajax*/
-
 function query(name,data) {
+
+    var count = query.count++;
+
 
     var str = '';
 
@@ -63,6 +111,7 @@ function query(name,data) {
     $.each(data.split('.'), function(k,v) {
         str += '&'+ v + '=' +$('#'+v).val();
     });
+        str += '&'+ name + '=' + name;
 
     $.ajax({
         url:'../php/main.php',
@@ -70,33 +119,16 @@ function query(name,data) {
         data:  str,
         cache: false,
         success : function(data) {
+            
+            console.log(data);
+             $(".error").text(data).fadeIn();
 
-            var dataSplit = data.split('~');
+             setTimeout(function() {
+                $(".error").fadeOut();
+             },5000);
 
-            var errorId = $( " .error ").each(function() {});
-
-            for (var i = 1; i <= dataSplit.length; i+=3) {
-                var errorText = [dataSplit[i]]
-                
-            }
-            var errorName = for (var i = 2; i <= dataSplit.length; i+=3) {
-                
-            }
-            console.log(errorName)
-            for (var i = 3; i <= dataSplit.length; i+=3) {
-                
-            }
-
-
-            for (var i = 0; i < dataSplit.length; i++) {
-                 for (var j = 0; j < errorId.length; j++) {
-                    if (dataSplit[i] == errorId[j].id) {
-                       
-                    }
-                }
-            }
-    }
-
+        }
     })
+
+
 }
-/**/
